@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1> this lecture deals with the events and events bubbling</h1>
+            <div class="box">
+                heyy i am a box
+            </div>
+            <button id="btn"> change content</button>
+        </div>
+    </div>
+<script>
+let button = document.getElementById("btn")
+button.addEventListener("click", ()=>
+{
+    // alert("i was skilled")
+    document.querySelector(".box").innerHTML = " <b> yeayy you are clicked</b>"
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSES | OBJECTS</title>
+</head>
+
+<body>
+    <h1>
+        In this lecture we are gonna to learn about the Classes and Objects in Javascript
+    </h1>
+    <script>
+
+        // const student ={
+        //     fullname : "Subodh Singh",
+        //     marks : 89,
+        //     // methods definition
+        //     printMarks : function(){
+        //         console.log("marks = ", this.marks); // this.marks refers to student.marks
+        //     },
+        // }
+
+        // const employee = {
+        //     calcTax(){
+        //         console.log("tax rate is 10%")
+        //     },
+        //             // this is also a way to declare the method funtion but generally we use to declare like the above one
+        //     // calctax2 : function (){    
+        //     //     console.log("tax rate is 30%")
+        //     // }
+        // }
+
+        // const  karanarjun = {
+        //     salary : 5000,
+        // }
+        // karanarjun.__proto__ = employee;
+
+
+        // CLASSES IN JS
+        class ToyotaCar {
+            constructor(){
+                console.log("car is everything") // constructor is the first thing whihc is invoked
+            }
+            start() {
+                console.log("start")
+            }
+            stop() {
+                console.log("stop")
+            }
+
+            // creating one method 
+            setBrand(brand){
+                this.brandName = brand;
+            }
+        }
+
+        let fortuner = new ToyotaCar();
+        // fortuner.setBrand("mercedes")
+        let lexus = new ToyotaCar();
+        // lexus.setBrand("ferrari")
+
+
+    </script>
+</body>
+
+</html>

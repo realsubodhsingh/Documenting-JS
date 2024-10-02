@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks and Promises</title>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <h1>We are gonnna to work on callbacks and promises in javascript</h1>
+        </div>
+    </div>
+<script>
+    // see  in this script we have downloaded a extension whihch is used to create the anonymous arrow function automatically
+    // for creating that arrow function you are supposed to type anfn before
+   const callback = (arg) => {
+    console.log(arg)
+   }
+    const loadScript = (src, callback) => {
+      let sc = document.createElement("script");
+      sc.src = src;
+      sc.onload = callback("harry");
+      document.head.append(sc)
+    }
+   
+loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", callback)
+
+
+</script>  
+</body>
+</html>

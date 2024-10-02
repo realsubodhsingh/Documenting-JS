@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript dom</title>
+    <style>
+        .box{
+            height: 45px;
+            width: 46px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+</div>
+</body>
+<script>
+    // document.title =" harry is good"
+    // console.log(document.title)
+    // console.log(document.body)
+    // document.body.style.backgroundColor = "green"; // this one is the inline css adding with dom in JS
+
+// child, parents and nodes lecture
+
+// console.log(document.body)
+// console.log(document.body.childNodes)
+// console.log(document.body.childNodes[0]) // this is same as array, you give the index and you get the elements store at that particular place
+// console.log(document.body.childNodes[1].childNodes) //child nodes inside the child nodes
+// let cont= document.body.childNodes[1]
+// console.log(cont)
+// console.log(cont.lastElementChild)
+// cont.lastElementChild.style.backgroundColor= "green"
+
+// parent element accessing
+
+// console.log(cont.lastElementChild.parentElement)
+
+// console.log(cont.firstElementChild)
+console.log(document.body.firstElementChild)
+console.log(document.body.firstElementChild.childNodes)
+console.log(document.body.firstElementChild.children)
+console.log(document.body.firstElementChild.children[2].nextElementSibling)
+</script>
+</html>

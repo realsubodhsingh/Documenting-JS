@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .box{
+        font: 29px;
+        height: 34px;
+        width: 54px;
+        padding: 20px;
+        margin: 20px;
+        border: 10px solid green;
+
+    }
+</style>
+</head>
+<body>
+    <h2> Selectors in javascript lecture</h2>
+    <div class="container">
+        <div class="box">Bhupendar jogi</div>
+        <div id="second" class="box">Bhupendar jogi</div>
+        <div class="box">Bhupendar jogi</div>
+        <div class="box">Bhupendar jogi</div>
+        <div class="box">Bhupendar jogi</div>
+        <div class="box">Bhupendar jogi</div>
+    </div>
+<script>
+    // selecting ids and classes
+console.log("harry")
+
+// targeting the items by classes 📍
+
+// let boxes = document.getElementsByClassName("box")
+// console.log(boxes)
+// boxes[2].style.backgroundColor= "red"
+
+// targeting elements by their ids (particular target value)
+
+// document.getElementById("second").style.backgroundColor = "red"
+
+// query selector
+
+// document.querySelector(".box").style.backgroundColor = "yellow"
+// document.querySelectorAll(".box").style.backgroundColor = "pink" 
+// this above method will throw error
+document.querySelectorAll(".box").forEach(e =>
+{
+    e.style.backgroundColor = "pink";
+})
+</script>
+</body>
+</html>

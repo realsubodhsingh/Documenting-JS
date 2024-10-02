@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <h1>
+    <div class="container">
+      <div class="box" style="color: green;">
+        heyy i am box
+      </div>
+    </div>
+  </h1>
+  <script>
+    // document.querySelector(".box")
+    // document.querySelector(".box").innerHTML
+    // document.querySelector(".box").innerText
+    // document.querySelector(".container").hidden
+    // document.querySelector(".container").innerHTML = "now it is changes "
+    // document.querySelector(".box").hasAttribute("style")
+    // document.querySelector(".container").setAttribute("style", "color: orange")
+
+    //  Insertion Methods
+    // let div = document.createElement("div");
+    // div.innerHTML = "This particular div is inserted using JavaScript <b>by Subodh Singh</b>";
+    // div.setAttribute("class", "created");
+    // document.querySelector(".container").append(div);
+
+
+    // let div = document.createElement("div")
+    // div.className = "alert"
+    // div.innerHTML = "<span> hello </span>"
+    // document.body.append(div)
+
+    // insertion of adjacent html
+
+    let cont = document.querySelector(".container")
+    cont.insertAdjacentElementHTML("afterbegin", "<b>mai hu kallu kaliya</b>")
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API FETCH</title>
+</head>
+
+<body>
+    <h1>In this tutorial we are going to discuss
+        the API Fetching methods from th apna college.
+    </h1>
+    <p id="fact">
+        <button id="btn"> Get a Fact</button>
+    </p>
+    <script>
+        const URL = "https://cat-fact.herokuapp.com/facts"
+
+        // const getFacts = async () => {
+        //     console.log("getting data...")
+        //     let response = await fetch(URL)
+        //     console.log(response)  //  JSON format
+        //     let data = await response.json();
+        //     console.log(data[0].text)}
+
+        // Understanding how to print the data in the random paragraph in the html page
+        const factpara = document.querySelector("#fact")
+        const btn = document.querySelector("#btn")
+       
+        const getFacts = async () => {
+            console.log("getting data...")
+            let response = await fetch(URL)
+            console.log(response)  //  JSON format
+            let data = await response.json();
+            factpara.innerText = data[1].text;
+        }
+        btn.addEventListener("click",getFacts)
+    </script>
+</body>
+
+</html>

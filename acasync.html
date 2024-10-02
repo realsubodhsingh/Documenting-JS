@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async, await and promises</title>
+</head>
+
+<body>
+    <h1>this is the shradha di tutorial in which we are studing the concepts of async, await and promises</h1>
+
+    <script>
+        function getData(dataId, getNextData){
+            // 2s delay in fetching data one by one
+            setTimeout(()=>{
+                console.log("data", dataId)
+                if(getNextData){
+                    getNextData();
+                }
+            }, 2000);
+        }
+        // // this is also a example of callback hell, also known as "pyramid of doom" 
+        getData(1, ()=>{
+            console.log("getting data 2")
+            getData(2,()=>{
+                console.log("getting data 3")
+                getData(3,()=>{
+                    console.log("getting data 3")
+                    getData(4,()=>{
+                        console.log("over, nothing more there for the fetching")
+                    })
+                })
+            })
+        // })
+
+        let promise = new Promise((resolve, reject)=>{
+            console.log("i am promise")
+            reject("some error occurred")
+            resolve("success")  
+        })
+
+        function getData(dataId, getNextData){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    // console.log("data", dataId)
+                    // resolve("success")
+                    reject("unknown error")
+                    if(getNextData){
+                        getNextData()
+                    }
+                },5000)
+            })
+        }
+
+           const getPromise = ()=>{
+            return new Promise((resolve, reject)=>{
+                console.log("i am promise")
+                // resolve("success")  
+                reject("unknown error")
+            })
+           }
+        // in case of promise rejection then() function will never be printed
+           let promise = getPromise();
+           promise.then((res)=>{
+            console.log("promise is fullfilled", res)
+           })
+
+        // for rejection we use catch() function
+         promise.catch((err)=>{
+            console.log("the api is not working right now hence throwing error", err)
+         })
+
+        // Promise Chaining
+        function asyncFunc1() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("data1")
+                    resolve("success")
+                }, 4000)
+            }
+            )
+        }
+        function asyncFunc2() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("data2")
+                    resolve("success")
+                }, 4000)
+            }
+            )
+        }
+        console.log("fetching data1....")
+        let p1 = asyncFunc1();  // calling function 2
+        p1.then((res) => {
+            console.log(res);
+            console.log("fetching data2....")
+            let p2 = asyncFunc2();  // calling function 2
+            p1.then((res) => {
+                console.log(res)
+            })
+        })
+
+        // applying promise chaining on the previous aboove examples
+
+        function getData(dataId) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("data", dataId)
+                    resolve("success")
+                }, 1000)
+            })
+        }
+
+        // getData(1).then((res)=>{
+        //     console.log(res)
+        //     getData(2).then(()=>{
+        //         console.log(res)
+        //     })
+        // })
+
+         // infact this promise chaining can also be written in more simpler and clean way
+        
+         getData(1)
+         .then((res)=>{
+            return getData(2)
+         })
+         .then((res)=>{
+            return getData(3)
+         })
+         .then((res)=>{
+            console.log(res)
+         })
+    </script>
+</body>
+
+</html>
+
+// warning : if you try to run this code in your system then it will throw error because of functions repititions, only I can understand what i have done here 😎
